@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  i2c:
+    build: .
+    devices: 
+      - /dev/i2c-1
+    volumes: 
+      - ./data:/data
+    working_dir: /data
+    command: "python3 index.py"
+    tty: true
+    stdin_open: true
